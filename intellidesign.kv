@@ -1,0 +1,39 @@
+#TODO-- to design window
+<MyGridLayout>
+    name: nameid
+    canvas.before:
+        Rectangle:
+            pos:self.pos
+            size:self.size
+            source:"BG1.png"
+    GridLayout:
+        cols:1
+        size: root.width,root.height
+
+        BoxLayout:
+            padding:25
+            size_hint: 1, 1
+            AsyncImage:
+                id:update_image
+                source: root.update_image
+                size_hint: 0.8, 1
+                allow_stretch: True
+
+        BoxLayout:
+            size_hint: 1, 0.5
+            BoxLayout:
+                padding: 50
+                size_hint: 0.8, 1
+                spacing: '10dp'
+                TextInput:
+                    id: nameid
+                    hint_text:"Enter Prompt"
+                    size_hint: 0.8, 0.8
+                    # height:40
+                    # width:50
+                Button:
+                    text: "Generate"
+                    background_color:"cyan" 
+                    color:"white"
+                    on_press:root.press()
+                    size_hint: 0.1, 0.8
